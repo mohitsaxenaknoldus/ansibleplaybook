@@ -1,0 +1,9 @@
+To run from Ansible server:
+
+ansible demo -b -m yum -a "pkg=httpd state=present"
+
+ansible demo -b -m yum -a "pkg=httpd state=latest"
+
+ansible demo -b -m yum -a "pkg=httpd state=absent"
+
+ansible demo -b -m service -a "name=httpd state=started"

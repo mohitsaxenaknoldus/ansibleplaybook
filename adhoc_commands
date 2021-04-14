@@ -1,0 +1,15 @@
+Run from Ansible server:
+
+ansible demo -a "ls"
+
+ansible demo[0] -a "touch filex"
+
+ansible all -a "touch filey"
+
+ansible demo -a "ls -al"
+
+ansible demo -s "sudo yum install httpd -y"
+or
+ansible demo -ba "yum install https -y"
+
+ansible demo -ba "yum remove httpd -y"
