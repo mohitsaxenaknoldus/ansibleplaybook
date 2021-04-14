@@ -1,0 +1,24 @@
+--- # First Playbook
+- hosts: demo
+  gather_facts: yes
+  become: yes
+  vars:
+          httpdpkg: httpd
+
+  tasks:
+          - name: install httpd on Linux
+            action: yum name='{{httpdpkg}}' state=present
+            notify: restart httpd
+
+          - name: install cowsay, make, gcc, wget
+            action: yum name='{{item}}' state=present
+            with_items:
+                    - cowsay
+                    - make
+                    - gcc
+                    - wget
+
+  handlers:
+          - name: restart httpd
+            action: service name=httpd state=restarted
+...
