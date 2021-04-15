@@ -1,0 +1,7 @@
+--- # Master Playbook
+- hosts: demo
+  gather_facts: yes
+  become: yes
+  roles:
+          - webserver
+...

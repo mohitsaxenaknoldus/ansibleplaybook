@@ -1,0 +1,8 @@
+- name: install apache on Linux
+  action: yum name='{{httpdpkg}}' state=present
+  notify: restart httpd
+
+- name: copy file from server to nodes
+  copy:
+        src: foo.conf
+        dest: /etc/foo.conf
